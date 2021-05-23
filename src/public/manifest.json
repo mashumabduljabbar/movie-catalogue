@@ -1,6 +1,6 @@
 {
     "name": "Movie Catalogue Lite",
-    "short_name": "Movie Lite",
+    "short_name": "Movie Lites",
     "description": "Free Catalogue Movie for you",
     "start_url": "/index.html",
     "display": "standalone",
