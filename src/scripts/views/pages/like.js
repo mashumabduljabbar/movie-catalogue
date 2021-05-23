@@ -1,11 +1,11 @@
-import TheMovieDbSource from '../../data/themoviedb-source';
+import FavoriteMovieIdb from '../../data/favorite-movie-idb';
 import { createMovieItemTemplate } from '../templates/template-creator';
 
-const Upcoming = {
+const Like = {
   async render() {
     return `
       <div class="content">
-        <h2 class="content__heading">Upcoming in Cinema</h2>
+        <h2 class="content__heading">Your Liked Movie</h2>
         <div id="movies" class="movies">
 
         </div>
@@ -14,7 +14,7 @@ const Upcoming = {
   },
 
   async afterRender() {
-    const movies = await TheMovieDbSource.upcomingMovies();
+    const movies = await FavoriteMovieIdb.getAllMovies();
     const moviesContainer = document.querySelector('#movies');
     movies.forEach((movie) => {
       moviesContainer.innerHTML += createMovieItemTemplate(movie);
@@ -22,4 +22,4 @@ const Upcoming = {
   },
 };
 
-export default Upcoming;
+export default Like;

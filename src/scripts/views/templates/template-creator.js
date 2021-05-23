@@ -1,5 +1,5 @@
 import CONFIG from '../../globals/config';
- 
+
 const createMovieDetailTemplate = (movie) => `
   <h2 class="movie__title">${movie.title}</h2>
   <img class="movie__poster" src="${CONFIG.BASE_IMAGE_URL + movie.poster_path}" alt="${movie.title}" />
@@ -19,7 +19,7 @@ const createMovieDetailTemplate = (movie) => `
     <p>${movie.overview}</p>
   </div>
 `;
- 
+
 const createMovieItemTemplate = (movie) => `
   <div class="movie-item">
     <div class="movie-item__header">
@@ -35,5 +35,22 @@ const createMovieItemTemplate = (movie) => `
     </div>
   </div>
   `;
- 
-export { createMovieItemTemplate, createMovieDetailTemplate };
+
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this movie" id="likeButton" class="like">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this movie" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
+export {
+  createMovieItemTemplate,
+  createMovieDetailTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+};
